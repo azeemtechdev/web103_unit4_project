@@ -46,9 +46,94 @@
 }
 
 #root main {
+    display: block;
+    padding: 40px 60px;
+}
+
+/* Car list layout */
+.car-grid {
     display: flex;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    flex-direction: column;
+    gap: 28px;
+    align-items: center;
+    width: 100%;
+}
+
+.card {
+    width: 88%;
+    background: var(--card-background-color);
+    border-radius: 8px;
+    padding: 28px 36px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+
+.card h3 {
+    font-size: 2rem;
+    color: var(--h3-color);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.card .content-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.card .left-col {
+    flex: 1 1 60%;
+    color: #e6e6e6;
+}
+
+.card .left-col p {
+    margin: 6px 0;
+}
+
+.card .right-col {
+    flex: 0 0 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 14px;
+}
+
+.price {
+    font-size: 1.4rem;
+    color: #ffd966;
+    font-weight: 700;
+}
+
+.button-group {
+    display: flex;
+    gap: 12px;
+}
+
+.button {
+    background: #b31217;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.button.secondary {
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.15);
+}
+
+.button.danger { background: #8b0000 }
+
+@media (max-width: 800px) {
+    .card { width: 96%; padding: 18px }
+    .card .content-row { flex-direction: column; align-items: flex-start }
+    .card .right-col { align-items: flex-start }
 }
 
 #root article {
